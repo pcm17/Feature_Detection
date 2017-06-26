@@ -7,11 +7,11 @@
 %%% Need to fix some stuff - the feature descriptors for keypoints are not 
 %%% computed and returned by the compute_features function
 
-image_files = dir('*.jpg');      
+image_files = dir('images/*.jpg');      
 nfiles = length(image_files);    % Number of files found in MATLAB folder
 nfiles = 1;
 for i=1:nfiles
-    image = imread(image_files(i).name);
+    image = imread(['images/' image_files(i).name]);
     [X, Y, scores, Ix, Iy] = extract_keypoints(image);
 
 end
